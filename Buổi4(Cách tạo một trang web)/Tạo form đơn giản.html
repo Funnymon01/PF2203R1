@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            width: 50%;
+            height: 40%;
+            border: 1px black solid;
+            margin: auto;
+            padding: auto;
+        }
+        .header{
+            background-color: rgb(245, 162, 10);
+            color: white;
+            text-align: center;
+        }
+        .text{
+            margin-left: 20px;
+        }
+        .list{
+            margin-left: 70px;
+        }
+        .footer{
+            display: flex;
+            margin-left: 70px ;
+        }
+        .footer2{
+            margin-left: 25px;
+        }
+        .email input{
+            margin-left: 32px;
+        }
+    </style>
+</head>
+<body>
+    <form action="Tạo form đơn giản.html" class="form">
+        <div>
+            <div class="header">
+                <h1>Sở thích của bạn</h1>
+            </div>
+            <p class="text">Họ và Tên <input type="text"></p>
+            
+            <div class="email">
+                <p class="text">Email<input type="text"></p>
+            </div>
+                
+                <p class="text">Sở thích</p>
+                <div class="list">
+                    <input type="checkbox">Thể thao
+                    <input type="checkbox">Âm nhạc
+                    <input type="checkbox">Đọc sách <br><br>
+                    <input type="checkbox">Lướt web
+                    <input type="checkbox">Chơi game
+                    <input type="checkbox">Điện ảnh <br><br>
+                    <input type="checkbox">Du lịch
+                </div>
+                
+            <div class="footer">
+                <p><input type = "button" name="btSubmit" value="Gửi thông tin"/></p>
+                <p class="footer2"><input type = "button" name="btSubmit" value="Nhập lại"/></p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
