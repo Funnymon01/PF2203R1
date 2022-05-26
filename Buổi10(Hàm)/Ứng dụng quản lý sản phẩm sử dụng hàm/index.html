@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input{
+            width: 500px;
+            height: 30px;
+        }
+        #button{
+            width: 50px;
+            height: 35px;
+            background-color: rgb(73, 216, 73);
+            border: 1px white solid;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Add New Product</h3>
+    <input type="text" name="" id="input" placeholder="New Product">
+    <button id="button" onclick="add()">Add</button>
+    <h3>Display All Product</h3>
+    <table class="table" id="render">
+        <tr>
+            <th>Product Name</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+    <script>
+
+        var data=[]
+
+        function add(){
+            var item_name = document.getElementById("input").value
+
+            var item ={
+                ProductName : item_name
+            }
+
+            let index = data.findIndex((c)=>c.ProductName==item.ProductName)
+
+            if(index>=0){
+                data.splice(index,1,item)
+            }
+            else{
+                data.push(item)
+            }
+            
+            render()
+            clear()
+        }
+
+        function render(){
+            table =`<tr>
+                <th>Product Name</th>
+                <th>Actions</th>
+            </tr>`
+            for(let i=0;i<data.length;i++){
+                table += `<tr>
+                <th>${data[i].ProductName}</th>
+                <th> 
+                    <button onclick="deleteItem(${data[i].ProductName})" >Delete</button>
+                    <button onclick="editItem(${data[i].ProductName})" >Edit</button>
+                </th>
+            </tr>`
+            }
+            document.getElementById("render").innerHTML = table
+        }
+
+        function clear(){
+            document.getElementById("input").value="";
+        }
+
+        function deleteItem(x){
+            for(let i=0;i<data.length;i++){
+                if(data[i].ProductName==x){
+                    data.splice(i,1)
+                    render()
+                }
+            }
+        }
+
+        function editItem(x){
+            for(let i=0;i<data.length;i++){
+                if(data[i].ProductName==x){
+                    document.getElementById("input").value = data[i].ProductName;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

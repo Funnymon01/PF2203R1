@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Hàm tính bình phương
+        function tinh_dien_tich_hinh_tròn(r){
+            return r * r * Math.PI;
+        }
+        function tinh_chu_vi_hinh_tron(r){
+            return (r + r) * Math.PI;
+        }
+        //Lấy dữ liệu
+        var r = parseInt(prompt("Nhập bán kính r: "));
+        //Tính
+        var tichdientich = tinh_dien_tich_hinh_tròn(r);
+        var tinhchuvi = tinh_chu_vi_hinh_tron(r);
+        //In ra màn hình
+        document.write("Diện tích hình tròn là " + tichdientich);
+        document.write(" Chu vi hình tròn là " + tinhchuvi);
+    </script>
+</body>
+</html>
